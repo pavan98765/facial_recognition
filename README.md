@@ -1,5 +1,5 @@
 # facial_recognition
-This github repo has 6 code files:
+This github repo has 6 code files: \n
 Detector.py: It can train and save encodings for future use, test on a single image, validate on multiple images and can run on live web cam or video.
 Lite.py: This is simpler version of detector.py focoused mainly on realtime recognition, it just loads the encodings and tries to match faces.
 Tracking.py: Here the code has Two phases- Face Recognition Phase , Object Tracking Phase. It can recognize and when a match is found, does tracking , and stores all tracking data in a database file(csv).
