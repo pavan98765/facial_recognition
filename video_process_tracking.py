@@ -1,15 +1,16 @@
 import face_recognition
 import cv2
 import pickle
+import time
 
-video_input = "data/fpv_drone2.mp4"
-output_file = "output/output_video.mp4"
-encodings_location = "output/encodings.pkl"
+video_input = "C:\\Users\\Jarvis\\Desktop\\BTP_face\\DATA\\#Drone_Data\\videos\\2m.MP4"
+output_file = "output/output_tracking.mp4"
+encodings_location = "output/encodings_Harsh.pkl"
 
 # Define parameters
-skip_frames = 5  # Number of frames to skip before processing
-size_ratio = 1.0  # Resize ratio for input frames
-tolerance = 0.5  # Tolerance for face recognition
+skip_frames = 10  # Number of frames to skip before processing
+size_ratio = 2.0  # Resize ratio for input frames
+tolerance = 0.45  # Tolerance for face recognition
 
 
 def main():
@@ -40,6 +41,8 @@ def main():
     tracking = False
     frame_count = 0
 
+    start_time = time.time()
+    original_frame_size = (frame_width, frame_height)
     while True:
         ret, frame = cap.read()
         if not ret:
@@ -82,18 +85,25 @@ def main():
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
                 # Draw the name at the bottom of the tracking box
                 font = cv2.FONT_HERSHEY_SIMPLEX
-                cv2.putText(frame, name, (x + 6, y + h + 20), font, 1, (0, 255, 0), 2)
+                cv2.putText(
+                    frame, name, (x, y - 20), font, 2, (0, 255, 0), 4, cv2.LINE_AA
+                )
             else:
                 # Tracking lost, switch back to face recognition
                 tracking = False
                 tracker = cv2.TrackerKCF_create()
 
+        frame = cv2.resize(frame, original_frame_size)
         # Write the frame to the output video
         out.write(frame)
 
+        print(f"Processed frame {frame_count}/{int(cap.get(cv2.CAP_PROP_FRAME_COUNT))}")
     # Release video capture and writer
     cap.release()
     out.release()
+    end_time = time.time()  # Record the end time
+    processing_time = (end_time - start_time) / 60  # Calculate the processing time
+    print(f"Processing time: {processing_time:.2f} minutes")
 
 
 if __name__ == "__main__":

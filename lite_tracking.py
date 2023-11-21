@@ -2,7 +2,7 @@ import face_recognition
 import cv2
 import pickle
 
-encodings_location = "output/encodings_pavan.pkl"
+encodings_location = "output/encodings.pkl"
 with open(encodings_location, "rb") as f:
     loaded_encodings = pickle.load(f)
 
@@ -51,7 +51,9 @@ while True:
             x, y, w, h = map(int, tracking_bbox)
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
             font = cv2.FONT_HERSHEY_SIMPLEX
-            cv2.putText(frame, name, (x + 6, y + h + 20), font, 1, (0, 255, 0), 2)
+            cv2.putText(
+                frame, name, (x + 6, y - 10), font, 1.5, (0, 255, 0), 3, cv2.LINE_AA
+            )
         else:
             tracking = False
             tracker = cv2.legacy.TrackerKCF_create()

@@ -2,7 +2,7 @@ import face_recognition
 import cv2
 import pickle
 
-encodings_location = "output/encodings_friends.pkl"
+encodings_location = "output/encodings.pkl"
 with open(encodings_location, "rb") as f:
     loaded_encodings = pickle.load(f)
 
