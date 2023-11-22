@@ -4,20 +4,24 @@ This repository contains Python scripts for facial recognition tasks, offering a
 
 ## Dataset format:
 
-````face_recognizer/
+```
+face_recognizer/
 │
 ├── output/
 │
 ├── training/
-│ └── class_1/
+│ └── ben_affleck/
 │ ├── img_1.jpg
 │ └── img_2.png
 │
 ├── validation/
-│ ├── image1.jpg
-│ └── image2.jpg
+│ ├── ben_affleck1.jpg
+│ └── michael_jordan1.jpg
 │
-├── detector.py```
+├── detector.py
+├── requirements.txt
+└── unknown.jpg
+```
 
 ## Scripts Overview:
 
@@ -58,4 +62,3 @@ Ensure you have the following dependencies installed:
 - Other relevant libraries (specified in individual script requirements)
 
 Feel free to explore each script for detailed instructions and usage.
-````
