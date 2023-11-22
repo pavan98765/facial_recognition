@@ -44,22 +44,30 @@ face_recognizer/
    - **Live Recognition:** Perform real-time face recognition using a webcam or video feed.
    - **Evaluate:** Evaluate the model on the test dataset.
 
-2. **Lite.py:**
+2. **image_process.py:**
+   image_process.py takes in the images from the validation folder, predicts on it and stores them in the output folder.
+
+3. **video_process.py:**
+   video_process.py take in a video input and then predicts and stores the output in the output folder. this only does facial recognition on the frames.
+4. **video_process_tracking.py:**
+   video_process_tracking.py is a faster and better version of video_process.py, where it waits for a match and switches to tracking,later when the tracking is lost back to recogntion. Basically two phases tracking and recognition. It is faster and more suited for tracking a single person.
+
+5. **Lite.py:**
    Lite.py is a simplified version of Detector.py, focusing primarily on real-time recognition. It loads pre-trained encodings and attempts to match faces in a live video feed.
 
-3. **Tracking.py:**
+6. **Tracking.py:**
    Tracking.py is a script with two main phases:
 
    - **Face Recognition Phase:** Recognize faces and, when a match is found, initiate tracking.
    - **Object Tracking Phase:** Track recognized faces and store tracking data in a database file (CSV).
 
-4. **Lite_tracking.py:**
+7. **Lite_tracking.py:**
    Lite_tracking.py is a more streamlined version of Tracking.py, emphasizing live recognition and tracking.
 
-5. **Video_process.py:**
+8. **Video_process.py:**
    Video_process.py is similar to Detector.py but specifically designed for processing videos. It performs recognition on video frames and saves the processed video output.
 
-6. **Video_process_tracking.py:**
+9. **Video_process_tracking.py:**
    Video_process_tracking.py is similar to Tracking.py but tailored for video processing. It combines recognition and tracking on video frames and saves the processed video output.
 
 ## Dependencies:
@@ -67,8 +75,7 @@ face_recognizer/
 Ensure you have the following dependencies installed:
 
 - Python (>=3.6)
-- OpenCV (cv2)
+- OpenCV (cv2) == 4.6.0.66
 - face_recognition
-- Other relevant libraries (specified in individual script requirements)
 
 Feel free to explore each script for detailed instructions and usage.
