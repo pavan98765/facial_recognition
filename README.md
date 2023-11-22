@@ -1,6 +1,23 @@
 # Facial Recognition Repository
 
-This repository contains Python scripts for facial recognition tasks, offering a versatile set of functionalities for training, testing, validation, and real-time recognition, with or without object tracking.
+This repository contains Python scripts for facial recognition tasks, offering a versatile set of functionalities for training, testing, validation,image/video processing and real-time recognition, with or without object tracking.
+
+## Dataset format:
+
+face_recognizer/
+│
+├── output/
+│
+├── training/
+│ └── class_1/
+│ ├── img_1.jpg
+│ └── img_2.png
+│
+├── validation/
+│ ├── image1.jpg
+│ └── image2.jpg
+│
+├── detector.py
 
 ## Scripts Overview:
 
@@ -11,6 +28,7 @@ This repository contains Python scripts for facial recognition tasks, offering a
    - **Testing:** Test on a single image to recognize faces.
    - **Validation:** Validate on multiple images and save processed images with recognized faces.
    - **Live Recognition:** Perform real-time face recognition using a webcam or video feed.
+   - **Evaluate:** Evaluate the model on the test dataset.
 
 2. **Lite.py:**
    Lite.py is a simplified version of Detector.py, focusing primarily on real-time recognition. It loads pre-trained encodings and attempts to match faces in a live video feed.
@@ -39,6 +57,4 @@ Ensure you have the following dependencies installed:
 - face_recognition
 - Other relevant libraries (specified in individual script requirements)
 
-Feel free to explore each script for detailed instructions and usage. If you encounter any issues or have suggestions for improvement, please create an issue or pull request.
-
-Happy coding!
+Feel free to explore each script for detailed instructions and usage.
