@@ -10,17 +10,25 @@ face_recognizer/
 ├── output/
 │
 ├── training/
-│ └── ben_affleck/
-│ ├── img_1.jpg
-│ └── img_2.png
+│ └── class1/
+│       ├── img_1.jpg
+│       └── img_2.png
+│ └── class2/
+│       ├── img_1.jpg
+│       └── img_2.png
+|
+├── test/
+│ └── class_name/
+│       ├── img_1.jpg
+│       └── img_2.png
 │
 ├── validation/
-│ ├── ben_affleck1.jpg
-│ └── michael_jordan1.jpg
+│       ├── image1.jpg
+│       └── image2.jpg
 │
 ├── detector.py
-├── requirements.txt
-└── unknown.jpg
+├── image_process.py
+└── video_process.py
 ```
 
 ## Scripts Overview:
@@ -28,7 +36,9 @@ face_recognizer/
 1. **Detector.py:**
    Detector.py is a versatile script that can perform various facial recognition tasks:
 
-   - **Training and Encoding:** Train the model on input data and save encodings for future use.
+   - **Training and Encoding:** Train the model on input data and save encodings for future use.Put the training data in training folder with the above format then run the code below:
+     `python Detector.py --train`
+
    - **Testing:** Test on a single image to recognize faces.
    - **Validation:** Validate on multiple images and save processed images with recognized faces.
    - **Live Recognition:** Perform real-time face recognition using a webcam or video feed.
