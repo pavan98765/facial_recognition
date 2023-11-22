@@ -2,7 +2,7 @@
 
 This repository contains Python scripts for facial recognition tasks, offering a versatile set of functionalities for training, testing, validation,image/video processing and real-time recognition, with or without object tracking.
 
-## Dataset format:
+## Repo/Dataset format:
 
 ```
 face_recognizer/
