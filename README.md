@@ -74,10 +74,10 @@ face_recognizer/
 
 ### 4. video_process_tracking.py:
 
-    `video_process_tracking.py` is an enhanced version of `video_process.py` with a two-phase approach: tracking and recognition.
+`video_process_tracking.py` is an enhanced version of `video_process.py` with a two-phase approach: tracking and recognition.
 
-    - **Faster Tracking:**
-        This script waits for a match and seamlessly switches to the tracking phase, providing a quicker and more efficient tracking experience.
+- **Faster Tracking:**
+  This script waits for a match and seamlessly switches to the tracking phase, providing a quicker and more efficient tracking experience.
 
 - **Improved Performance:**
   Designed for tracking a single person, `video_process_tracking.py` optimizes the recognition process, making it faster and more suited to scenarios where tracking is a priority.
