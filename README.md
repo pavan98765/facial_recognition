@@ -4,7 +4,7 @@ This repository contains Python scripts for facial recognition tasks, offering a
 
 ## Dataset format:
 
-face_recognizer/
+````face_recognizer/
 │
 ├── output/
 │
@@ -17,7 +17,7 @@ face_recognizer/
 │ ├── image1.jpg
 │ └── image2.jpg
 │
-├── detector.py
+├── detector.py```
 
 ## Scripts Overview:
 
@@ -58,3 +58,4 @@ Ensure you have the following dependencies installed:
 - Other relevant libraries (specified in individual script requirements)
 
 Feel free to explore each script for detailed instructions and usage.
+````
